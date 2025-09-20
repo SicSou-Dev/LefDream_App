@@ -1,0 +1,36 @@
+{
+  "name": "lefdream-app",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.lefdream.app",
+    "productName": "LefDream",
+    "win": {
+      "icon": "icon.ico"
+    },
+    "mac": {
+      "icon": "icon.icns"
+    },
+    "linux": {
+      "icon": "icon.png"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "SicSou-Dev",
+        "repo": "LefDream_App"
+      }
+    ]
+  },
+  "dependencies": {
+    "electron-updater": "^6.2.1"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  }
+}
