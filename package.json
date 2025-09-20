@@ -1,36 +1,48 @@
 {
-  "name": "lefdream-app",
+  "name": "lefdream",
   "version": "1.0.0",
+  "description": "LefDream - Client Desktop (Electron + site web)",
   "main": "main.js",
+  "author": "TonNom",
+  "license": "MIT",
   "scripts": {
     "start": "electron .",
+    "pack": "electron-builder --dir",
     "dist": "electron-builder"
+  },
+  "dependencies": {
+    "electron-updater": "^6.1.8"
+  },
+  "devDependencies": {
+    "electron": "^30.0.0",
+    "electron-builder": "^25.0.0"
   },
   "build": {
     "appId": "com.lefdream.app",
     "productName": "LefDream",
-    "win": {
-      "icon": "icon.ico"
+    "files": [
+      "**/*"
+    ],
+    "directories": {
+      "buildResources": "build",
+      "output": "dist"
     },
     "mac": {
-      "icon": "icon.icns"
+      "icon": "build/icon.png",
+      "category": "public.app-category.social-networking"
+    },
+    "win": {
+      "icon": "build/icon.png",
+      "target": "nsis"
     },
     "linux": {
-      "icon": "icon.png"
+      "icon": "build/icon.png",
+      "target": ["AppImage", "deb"]
     },
     "publish": [
       {
-        "provider": "github",
-        "owner": "SicSou-Dev",
-        "repo": "LefDream_App"
+        "provider": "github"
       }
     ]
-  },
-  "dependencies": {
-    "electron-updater": "^6.2.1"
-  },
-  "devDependencies": {
-    "electron": "^31.0.0",
-    "electron-builder": "^24.13.3"
   }
 }
